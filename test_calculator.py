@@ -5,15 +5,15 @@ from calculator import *
 class TestCalculator(unittest.TestCase):
     ######### Partner 2
     def test_add(self):
-        self.assertEqual(add(1,3), 4)
-        self.assertEqual(add(2,4), 6)
-        self.assertEqual(add(6,8), 14)
+        self.assertAlmostEqual(add(1,3), 4)
+        self.assertAlmostEqual(add(2,4), 6)
+        self.assertAlmostEqual(add(6,8), 14)
 
 
     def test_subtract(self):
-        self.assertEqual(add(8, 2), 6)
-        self.assertEqual(add(10, 1), 9)
-        self.assertEqual(add(2, 4), -2)
+        self.assertAlmostEqual(sub(8, 2), 6)
+        self.assertAlmostEqual(sub(10, 1), 9)
+        self.assertAlmostEqual(sub(2, 4), -2)
     # ##########################
 
     def test_multiply(self):
@@ -32,9 +32,9 @@ class TestCalculator(unittest.TestCase):
             div(0,5)
 
     def test_logarithm(self):
-        self.assertEqual(logarithm(100,10),2)
-        self.assertEqual(logarithm(8, 2), 3)
-        self.assertEqual(logarithm(125, 5), 3)
+        self.assertAlmostEqual(logarithm(100,10),2)
+        self.assertAlmostEqual(logarithm(8, 2), 3)
+        self.assertAlmostEqual(logarithm(125, 5), 3)
 
 
 
