@@ -1,4 +1,5 @@
 import unittest
+import math
 from calculator import *
 
 class TestCalculator(unittest.TestCase):
@@ -15,13 +16,15 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(add(2, 4), -2)
     # ##########################
 
-    ######## Partner 1
-    # def test_multiply(self): # 3 assertions
-    #     fill in code
+    def test_multiply(self):
+        self.assertAlmostEqual(mul(0, 1), 0)
+        self.assertAlmostEqual(mul(-5, -5), 25)
+        self.assertAlmostEqual(mul(5, -5), -25)
 
-    # def test_divide(self): # 3 assertions
-    #     fill in code
-    # ##########################
+    def test_divide(self):
+        self.assertAlmostEqual(div(10, 5), 0.5)
+        self.assertAlmostEqual(div(5, 10), 2)
+        self.assertAlmostEqual(div(0.2, 0.2), 1)
 
     ######## Partner 2
     def test_divide_by_zero(self):
@@ -39,24 +42,21 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             logarithm(5, -2)
     # ##########################
-    
-    ######## Partner 1
-    # def test_log_invalid_argument(self): # 1 assertion
-    #     # call log function inside, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #     logarithm(0, 5)
-    #     fill in code
 
-    # def test_hypotenuse(self): # 3 assertions
-    #     fill in code
+    def test_log_invalid_argument(self):
+        with self.assertRaises(ValueError):
+            logarithm(0, 5)
 
-    # def test_sqrt(self): # 3 assertions
-    #     # Test for invalid argument, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #    square_root(NUM)
-    #     # Test basic function
-    #     fill in code
-    ##########################
+    def test_hypotenuse(self):
+        self.assertAlmostEqual(hypotenuse(1, 1), math.sqrt(2))
+        self.assertAlmostEqual(hypotenuse(4, 4), math.sqrt(32))
+        self.assertAlmostEqual(hypotenuse(1, 5), math.sqrt(26))
+
+    def test_sqrt(self): # 3 assertions
+        with self.assertRaises(ValueError):
+            square_root(-5)
+        self.assertAlmostEqual(square_root(25), 5)
+        self.assertAlmostEqual(square_root(4), math.sqrt(4))
 
 # Do not touch this
 if __name__ == "__main__":
