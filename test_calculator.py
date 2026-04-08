@@ -11,9 +11,9 @@ class TestCalculator(unittest.TestCase):
 
 
     def test_subtract(self):
-        self.assertAlmostEqual(sub(8, 2), 6)
-        self.assertAlmostEqual(sub(10, 1), 9)
-        self.assertAlmostEqual(sub(2, 4), -2)
+        self.assertAlmostEqual(subtract(8, 2), 6)
+        self.assertAlmostEqual(subtract(10, 1), 9)
+        self.assertAlmostEqual(subtract(2, 4), -2)
     # ##########################
 
     def test_multiply(self):
